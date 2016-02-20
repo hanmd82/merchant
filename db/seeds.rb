@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# db/seeds.rb
+
 Product.create(title: "Oranges", price: 2.99, description: "Bag of 6 Valencia oranges", image_url: "oranges.jpg", stock: 100)
 Product.create(title: "Arugula", price: 2.49, description: "Arugula", image_url: "arugula.jpg", stock: 100)
 Product.create(title: "Broccoli", price: 5.59, description: "Broccoli", image_url: "broccoli.jpg", stock: 100)

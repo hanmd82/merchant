@@ -15,16 +15,14 @@
       <th>Subtotal</th>
       <th></th>
     </tr>
-    <% @order.order_items.each do |item| %>
-      <tr>
-        <td><%= image_tag "products/#{item.product.image_url}" %></td>
-        <td><%= item.product.title %></td>
-        <td><%= link_to item.quantity, edit_order_item_path(item) %></td>
-        <td><%= print_stock(item.product.stock, item.quantity) %></td>
-        <td><%= print_price item.product.price %></td>
-        <td><%= print_price item.subtotal %></td>
-        <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <%= content_tag_for(:tr, @order.order_items) do |item| %>
+      <td><%= image_tag "products/#{item.product.image_url}" %></td>
+      <td><%= item.product.title %></td>
+      <td class="quantity"><%= link_to item.quantity, edit_order_item_path(item) %></td>
+      <td><%= print_stock(item.product.stock, item.quantity) %></td>
+      <td><%= print_price item.product.price %></td>
+      <td><%= print_price item.subtotal %></td>
+      <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
     <tr>
       <th colspan="5">Order Total</th>

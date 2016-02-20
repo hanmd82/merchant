@@ -49,7 +49,7 @@ class SessionsController < ApplicationController
       session[:order_id] = @order.id
     end
 
-  	redirect_to products_path, notice: "Logged in as #{@user.name}"
+  	redirect_to root_path, notice: "Logged in as #{@user.name}"
   end
 
   def destroy
