@@ -12,7 +12,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
+gem 'execjs'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -32,9 +33,6 @@ gem 'factory_girl_rails', '~> 4.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 gem 'rails_12factor', group: :production
 
 group :development, :test do
@@ -52,4 +50,11 @@ group :development, :test do
   gem 'rack_session_access'
 end
 
-
+# Use Capistrano for deployment
+group :development do
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rvm'
+end
