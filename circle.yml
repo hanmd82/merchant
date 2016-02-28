@@ -1,0 +1,8 @@
+machine:
+  ruby:
+    version: 2.2.2
+
+database:
+  override:
+    - mv config/database.ci.yml config/database.yml
+    - bundle exec rake db:create db:migrate db:test:prepare
