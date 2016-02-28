@@ -7,7 +7,7 @@ development:
   encoding: unicode
   database: merchant_app_dev
   pool: 5
-  username: thenglee
+  username: mhan
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -18,7 +18,7 @@ test: &test
   encoding: unicode
   database: merchant_app_test
   pool: 5
-  username: thenglee
+  username: mhan
   password:
 
 production:
